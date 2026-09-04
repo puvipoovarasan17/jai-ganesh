@@ -1,0 +1,22 @@
+{
+  "name": "Jai Ganesh Catering",
+  "short_name": "Jai Ganesh",
+  "description": "Premium Veg & Non-Veg Catering Service in Chennai & Kanchipuram",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#160a21",
+  "theme_color": "#160a21",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/jg-icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/jg-icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

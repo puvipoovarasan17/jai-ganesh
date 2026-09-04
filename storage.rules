@@ -1,0 +1,29 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Helper function to check if user is admin via Firestore users collection
+    function isAdmin() {
+      return request.auth != null && 
+             firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    // Helper function to validate image uploads (max 5MB, must be image type)
+    function isValidImage() {
+      return request.resource.size < 5 * 1024 * 1024
+          && request.resource.contentType.matches('image/.*');
+    }
+
+    match /{allPaths=**} {
+      // 1. Read access
+      // Public can read all files (like event covers and gallery images)
+      allow read: if true;
+      
+      // 2. Write access
+      // ONLY admins can upload, update, or delete files
+      // Uploads MUST be valid images under 5MB
+      allow write: if isAdmin() && (request.resource == null || isValidImage());
+    }
+  }
+}

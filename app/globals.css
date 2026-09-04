@@ -1,0 +1,209 @@
+:root {
+  /* ========================================================
+  /* VIBRANT JEWEL TONES PALETTE (Option B) */
+  --bg-deep: #160a21; /* Very deep royal purple/plum */
+  --bg-primary: #231135; /* Lighter purple/plum for cards */
+  --bg-secondary: #2d1645;
+  
+  --accent-gold: #d4af37; /* Bright metallic gold */
+  --accent-gold-light: #f3e5ab;
+  --accent-gold-dark: #aa8529;
+  
+  --royal-purple: #5c2f82;
+  --royal-purple-dark: #3a1c54;
+
+  /* TEXT COLORS - Bright for dark background */
+  --warm-ivory: #fcfbf9; /* Crisp white/ivory for main text */
+  --warm-ivory-dim: #d8d0e3; /* Soft lavender-gray for descriptions */
+  --text-muted: #9e93b3;
+
+  /* Typography */
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  
+  /* Shadows & Layout */
+  --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.7);
+  
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-deep);
+  color: var(--warm-ivory);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========================================================
+   TYPOGRAPHY
+   ======================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--warm-ivory);
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.02em; }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+
+p {
+  color: var(--warm-ivory-dim);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: var(--accent-gold);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-gold-light);
+}
+
+/* ========================================================
+   LAYOUT & UTILITIES
+   ======================================================== */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+.text-center { text-align: center; }
+
+.section-header {
+  margin-bottom: 60px;
+}
+.section-subtitle {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--accent-gold);
+  margin-bottom: 16px;
+}
+
+/* ========================================================
+   BUTTONS
+   ======================================================== */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--accent-gold);
+  color: var(--bg-deep);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border-radius: 2px;
+  border: 1px solid var(--accent-gold);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--bg-deep);
+  color: var(--accent-gold);
+  box-shadow: 0 0 20px rgba(194, 155, 87, 0.2);
+}
+
+.btn-outline {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--warm-ivory);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border-radius: 2px;
+  border: 1px solid rgba(248, 245, 239, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+/* ========================================================
+   FORM ELEMENTS
+   ======================================================== */
+.form-group {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--warm-ivory-dim);
+  margin-bottom: 8px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--warm-ivory);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ========================================================
+   ANIMATIONS
+   ======================================================== */
+@keyframes zoomPan3D {
+  0% { transform: scale(1) translateZ(0) rotate(0deg); }
+  100% { transform: scale(1.1) translateZ(50px) rotate(0.5deg); }
+}
+
+@keyframes floatingParticles {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100px); }
+}
+
+.fade-in {
+  animation: fadeIn 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

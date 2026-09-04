@@ -1,0 +1,47 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to check if user is admin via the users collection
+    function isAdmin() {
+      return request.auth != null && exists(/databases/$(database)/documents/users/$(request.auth.uid)) 
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    // USERS COLLECTION
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // 1. EVENTS COLLECTION
+    match /events/{eventId} {
+      allow read: if (resource.data.isPublished == true) || isAdmin();
+      allow create, update, delete: if isAdmin();
+    }
+
+    // 2. ENQUIRIES COLLECTION
+    match /enquiries/{enquiryId} {
+      allow create: if true;
+      allow read, update, delete: if isAdmin();
+    }
+
+    // 3. MENU COLLECTION
+    match /menu/{menuId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // 4. REVIEWS COLLECTION
+    match /reviews/{reviewId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // 5. EXPERIENCE PHOTOS COLLECTION
+    match /experience_photos/{photoId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+  }
+}

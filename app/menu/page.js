@@ -8,37 +8,37 @@ import Link from 'next/link';
 
 const DEFAULT_MENU = [
   // Breakfast
-  { id: '1', name: 'Traditional Ghee Pongal', description: 'Served with sambar, coconut chutney, and medu vada.', category: 'Breakfast', type: 'Veg', price: '', image: 'https://images.unsplash.com/photo-1626082895617-2c6af4b439c3?auto=format&fit=crop&q=80&w=600' },
-  { id: '1b', name: 'Crispy Masala Dosa', description: 'Golden roasted dosa stuffed with potato masala.', category: 'Breakfast', type: 'Veg', price: '', image: 'https://images.unsplash.com/photo-1589301760014-d929f39ce9b1?auto=format&fit=crop&q=80&w=600' },
+  { id: '1', name: 'Traditional Ghee Pongal', description: 'Served with sambar, coconut chutney, and medu vada.', category: 'Breakfast', type: 'Veg', price: '', image: '/images/menu/traditional-ghee-pongal.jpg' },
+  { id: '1b', name: 'Crispy Masala Dosa', description: 'Golden roasted dosa stuffed with potato masala.', category: 'Breakfast', type: 'Veg', price: '', image:'/images/menu/crispy-masala-dosa.jpg'},
   
   // Lunch
-  { id: '2', name: 'South Indian Kalyana Virundhu', description: 'Authentic full meals on banana leaf with 3 poriyals, sambar, rasam.', category: 'Lunch', type: 'Veg', price: '', image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&q=80&w=600' },
+  { id: '2', name: 'South Indian Kalyana Virundhu', description: 'Authentic full meals on banana leaf with 3 poriyals, sambar, rasam.', category: 'Lunch', type: 'Veg', price: '', image:'/images/menu/south-indian-kalyana-virundhu.jpg' },
   
   // Dinner
-  { id: '3', name: 'Malabar Parotta & Kurma', description: 'Flaky layered bread served with spicy vegetable kurma.', category: 'Dinner', type: 'Veg', price: '', image: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&q=80&w=600' },
+  { id: '3', name: 'Malabar Parotta & Kurma', description: 'Flaky layered bread served with spicy vegetable kurma.', category: 'Dinner', type: 'Veg', price: '', image:  '/images/menu/malabar-parotta-kurma.jpg'},
   
   // Starters
-  { id: '4', name: 'Crispy Chicken 65', description: 'Spicy, deep-fried chicken bites marinated in traditional spices.', category: 'Starters', type: 'Non-Veg', price: '', image: 'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&q=80&w=600' },
-  { id: '4b', name: 'Gobi Manchurian', description: 'Cauliflower florets tossed in sweet and tangy Chinese sauce.', category: 'Starters', type: 'Veg', price: '', image: 'https://images.unsplash.com/photo-1625398407796-a1145214be23?auto=format&fit=crop&q=80&w=600' },
+  { id: '4', name: ' Crispy Chicken 65', description: 'Spicy, deep-fried chicken bites marinated in traditional spices.', category: 'Starters', type: 'Non-Veg', price: '', image: '/images/menu/crispy-chicken-65.jpg' },
+  { id: '4b', name: 'Gobi Manchurian', description: 'Cauliflower florets tossed in sweet and tangy Chinese sauce.', category: 'Starters', type: 'Veg', price: '', image: '/images/menu/gobi-manchurian.jpg' },
   
   // Main Course
-  { id: '5', name: 'Mutton Biryani (Seeraga Samba)', description: 'Authentic Dindigul style mutton biryani served with raita & brinjal.', category: 'Main Course', type: 'Non-Veg', price: '', image: 'https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&q=80&w=600' },
-  { id: '6', name: 'Paneer Butter Masala', description: 'Rich and creamy curry made with fresh cottage cheese.', category: 'Main Course', type: 'Veg', price: '', image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc0?auto=format&fit=crop&q=80&w=600' },
+  { id: '5', name: 'Mutton Biryani (Seeraga Samba)', description: 'Authentic Dindigul style mutton biryani served with raita & brinjal.', category: 'Main Course', type: 'Non-Veg', price: '', image:'/images/menu/mutton-biryani-seeraga-samba.jpg' },
+  { id: '6', name: 'Paneer Butter Masala', description: 'Rich and creamy curry made with fresh cottage cheese.', category: 'Main Course', type: 'Veg', price: '', image:'/images/menu/paneer-butter-masala.jpg'},
   
   // Rice
-  { id: '7', name: 'Tangy Lemon Rice', description: 'Tempered rice infused with fresh lemon juice and roasted peanuts.', category: 'Rice', type: 'Veg', price: '', image: 'https://images.unsplash.com/photo-1516714435131-44d6b64dc6a2?auto=format&fit=crop&q=80&w=600' },
-  { id: '7b', name: 'Creamy Curd Rice', description: 'Soothing yogurt rice tempered with mustard seeds and curry leaves.', category: 'Rice', type: 'Veg', price: '', image: 'https://images.unsplash.com/photo-1631452180539-96aca7d48617?auto=format&fit=crop&q=80&w=600' },
+  { id: '7', name: 'Tangy Lemon Rice', description: 'Tempered rice infused with fresh lemon juice and roasted peanuts.', category: 'Rice', type: 'Veg', price: '', image: '/images/menu/tangy-lemon-rice.jpg' },
+  { id: '7b', name: 'Creamy Curd Rice', description: 'Soothing yogurt rice tempered with mustard seeds and curry leaves.', category: 'Rice', type: 'Veg', price: '', image: '/images/menu/creamy-curd-rice.jpg'},
   
   // Sweets
-  { id: '8', name: 'Elaneer Payasam', description: 'Tender coconut kheer served chilled.', category: 'Sweets', type: 'Veg', price: '', image: 'https://images.unsplash.com/photo-1563805042-7684c8e9e533?auto=format&fit=crop&q=80&w=600' },
-  { id: '8b', name: 'Hot Gulab Jamun', description: 'Soft milk solids soaked in cardamom flavored sugar syrup.', category: 'Sweets', type: 'Veg', price: '', image: 'https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&q=80&w=600' },
+  { id: '8', name: 'Elaneer Payasam', description: 'Tender coconut kheer served chilled.', category: 'Sweets', type: 'Veg', price: '', image:'/images/menu/elaneer-payasam.jpg'  },
+  { id: '8b', name: 'Hot Gulab Jamun', description: 'Soft milk solids soaked in cardamom flavored sugar syrup.', category: 'Sweets', type: 'Veg', price: '',image: '/images/menu/hot-gulab-jamun.jpg'},
   
   // Snacks
-  { id: '9', name: 'Onion Samosa', description: 'Crispy pastry triangles stuffed with spiced onions.', category: 'Snacks', type: 'Veg', price: '', image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&q=80&w=600' },
+  { id: '9', name: 'Onion Samosa', description: 'Crispy pastry triangles stuffed with spiced onions.', category: 'Snacks', type: 'Veg', price: '', image: '/images/menu/onion-samosa.jpg'},
   
   // Beverages
-  { id: '10', name: 'Kumbakonam Degree Coffee', description: 'Authentic South Indian filter coffee brewed to perfection.', category: 'Beverages', type: 'Veg', price: '', image: 'https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&q=80&w=600' },
-  { id: '11', name: 'Chilled Rose Milk', description: 'Refreshing milk flavored with rose syrup and sabja seeds.', category: 'Beverages', type: 'Veg', price: '', image: 'https://images.unsplash.com/photo-1572490122747-3968b75bb69c?auto=format&fit=crop&q=80&w=600' }
+  { id: '10', name: 'Kumbakonam Degree Coffee', description: 'Authentic South Indian filter coffee brewed to perfection.', category: 'Beverages', type: 'Veg', price: '', image: '/images/menu/kumbakonam-degree-coffee.jpg' },
+  { id: '11', name: 'Chilled Rose Milk', description: 'Refreshing milk flavored with rose syrup and sabja seeds.', category: 'Beverages', type: 'Veg', price: '', image:'/images/menu/chilled-rose-milk.jpg' }
 ];
 
 export default function DigitalMenu() {
@@ -65,37 +65,37 @@ export default function DigitalMenu() {
         
         const DEFAULT_MENU = [
           // Breakfast
-          { id: '1', name: 'Traditional Ghee Pongal', description: 'Served with sambar, coconut chutney, and medu vada.', category: 'Breakfast', type: 'Veg', price: '', image: '/images/menu/pongal.jpg' },
-          { id: '1b', name: 'Crispy Masala Dosa', description: 'Golden roasted dosa stuffed with potato masala.', category: 'Breakfast', type: 'Veg', price: '', image: '/images/menu/dosa.jpg' },
+          { id: '1', name: 'Traditional Ghee Pongal', description: 'Served with sambar, coconut chutney, and medu vada.', category: 'Breakfast', type: 'Veg', price: '', image: '/images/menu/traditional-ghee-pongal.jpg' },
+          { id: '1b', name: 'Crispy Masala Dosa', description: 'Golden roasted dosa stuffed with potato masala.', category: 'Breakfast', type: 'Veg', price: '', image: '/images/menu/crispy-masala-dosa.jpg' },
           
-          // Lunch
-          { id: '2', name: 'South Indian Kalyana Virundhu', description: 'Authentic full meals on banana leaf with 3 poriyals, sambar, rasam.', category: 'Lunch', type: 'Veg', price: '', image: '/images/menu/meals.jpg' },
+          // Lunch name: 'South Indian Kalyana Virundhu', description: 'Authentic full meals on banana leaf with 3 poriyals, sambar, rasam.', category: 'Lunch', type: 'Veg', price: '', image: '/images/menu/south-indian-kalyana-virundhu.jpg' },
+          { id: '2',name: 'South Indian Kalyana Virundhu', description: 'Authentic full meals on banana leaf with 3 poriyals, sambar, rasam.', category: 'Lunch', type: 'Veg', price: '', image: '/images/menu/south-indian-kalyana-virundhu.jpg' },
           
           // Dinner
-          { id: '3', name: 'Malabar Parotta & Kurma', description: 'Flaky layered bread served with spicy vegetable kurma.', category: 'Dinner', type: 'Veg', price: '', image: '/images/menu/parotta.jpg' },
+          { id: '3', name: 'Malabar Parotta & Kurma', description: 'Flaky layered bread served with spicy vegetable kurma.', category: 'Dinner', type: 'Veg', price: '', image: '/images/menu/malabar-parotta-kurma.jpg' },
           
           // Starters
-          { id: '4', name: 'Crispy Chicken 65', description: 'Spicy, deep-fried chicken bites marinated in traditional spices.', category: 'Starters', type: 'Non-Veg', price: '', image: '/images/menu/chicken65.jpg' },
-          { id: '4b', name: 'Gobi Manchurian', description: 'Cauliflower florets tossed in sweet and tangy Chinese sauce.', category: 'Starters', type: 'Veg', price: '', image: '/images/menu/gobi.jpg' },
+          { id: '4', name: 'Crispy Chicken 65', description: 'Spicy, deep-fried chicken bites marinated in traditional spices.', category: 'Starters', type: 'Non-Veg', price: '', image: '/images/menu/crispy-chicken-65.jpg' },
+          { id: '4b', name: 'Gobi Manchurian', description: 'Cauliflower florets tossed in sweet and tangy Chinese sauce.', category: 'Starters', type: 'Veg', price: '', image: '/images/menu/gobi-manchurian.jpg' },
           
           // Main Course
-          { id: '5', name: 'Mutton Biryani (Seeraga Samba)', description: 'Authentic Dindigul style mutton biryani served with raita & brinjal.', category: 'Main Course', type: 'Non-Veg', price: '', image: '/images/menu/biryani.jpg' },
-          { id: '6', name: 'Paneer Butter Masala', description: 'Rich and creamy curry made with fresh cottage cheese.', category: 'Main Course', type: 'Veg', price: '', image: '/images/menu/paneer.jpg' },
+          { id: '5', name: 'Mutton Biryani (Seeraga Samba)', description: 'Authentic Dindigul style mutton biryani served with raita & brinjal.', category: 'Main Course', type: 'Non-Veg', price: '', image: '/images/menu/mutton-biryani-seeraga-samba.jpg' },
+          { id: '6', name: 'Paneer Butter Masala', description: 'Rich and creamy curry made with fresh cottage cheese.', category: 'Main Course', type: 'Veg', price: '', image: '/images/menu/paneer-butter-masala.jpg' },
           
           // Rice
-          { id: '7', name: 'Tangy Lemon Rice', description: 'Tempered rice infused with fresh lemon juice and roasted peanuts.', category: 'Rice', type: 'Veg', price: '', image: '/images/menu/lemon_rice.jpg' },
-          { id: '7b', name: 'Creamy Curd Rice', description: 'Soothing yogurt rice tempered with mustard seeds and curry leaves.', category: 'Rice', type: 'Veg', price: '', image: '/images/menu/curd_rice.jpg' },
+          { id: '7', name: 'Tangy Lemon Rice', description: 'Tempered rice infused with fresh lemon juice and roasted peanuts.', category: 'Rice', type: 'Veg', price: '', image: '/images/menu/tangy-lemon-rice.jpg' },
+          { id: '7b', name: 'Creamy Curd Rice', description: 'Soothing yogurt rice tempered with mustard seeds and curry leaves.', category: 'Rice', type: 'Veg', price: '', image: '/images/menu/creamy-curd-rice.jpg' },
           
           // Sweets
-          { id: '8', name: 'Elaneer Payasam', description: 'Tender coconut kheer served chilled.', category: 'Sweets', type: 'Veg', price: '', image: '/images/menu/payasam.jpg' },
-          { id: '8b', name: 'Hot Gulab Jamun', description: 'Soft milk solids soaked in cardamom flavored sugar syrup.', category: 'Sweets', type: 'Veg', price: '', image: '/images/menu/payasam.jpg' },
+          { id: '8', name: 'Elaneer Payasam', description: 'Tender coconut kheer served chilled.', category: 'Sweets', type: 'Veg', price: '', image: '/images/menu/elaneer-payasam.jpg' },
+          { id: '8b', name: 'Hot Gulab Jamun', description: 'Soft milk solids soaked in cardamom flavored sugar syrup.', category: 'Sweets', type: 'Veg', price: '', image: '/images/menu/hot-gulab-jamun.jpg' },
           
           // Snacks
-          { id: '9', name: 'Onion Samosa', description: 'Crispy pastry triangles stuffed with spiced onions.', category: 'Snacks', type: 'Veg', price: '', image: '/images/menu/gobi.jpg' },
-          
+          { id: '9', name: 'Onion Samosa', description: 'Crispy pastry triangles stuffed with spiced onions.', category: 'Snacks', type: 'Veg', price: '', image: '/images/menu/onion-samosa.jpg'
+           },
           // Beverages
-          { id: '10', name: 'Kumbakonam Degree Coffee', description: 'Authentic South Indian filter coffee brewed to perfection.', category: 'Beverages', type: 'Veg', price: '', image: '/images/menu/coffee.jpg' },
-          { id: '11', name: 'Chilled Rose Milk', description: 'Refreshing milk flavored with rose syrup and sabja seeds.', category: 'Beverages', type: 'Veg', price: '', image: '/images/menu/curd_rice.jpg' }
+          { id: '10', name: 'Kumbakonam Degree Coffee', description: 'Authentic South Indian filter coffee brewed to perfection.', category: 'Beverages', type: 'Veg', price: '', image: '/images/menu/kumbakonam-degree-coffee.jpg' },
+          { id: '11', name: 'Chilled Rose Milk', description: 'Refreshing milk flavored with rose syrup and sabja seeds.', category: 'Beverages', type: 'Veg', price: '', image: '/images/menu/chilled-rose-milk.jpg' }
         ];
 
         // Merge Firestore items with DEFAULT_MENU to ensure all categories look rich for the demo

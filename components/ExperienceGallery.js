@@ -4,13 +4,43 @@ import { useState, useEffect } from 'react';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 
-// Real event photos from Jai Ganesh Catering & Service
+// The 5 selected major event photographs for The Jai Ganesh Experience
 const STATIC_PHOTOS = [
-  { id: 's1', url: '/images/experience/exp1.jpg', altText: 'Event Gathering — Jai Ganesh Catering' },
-  { id: 's2', url: '/images/experience/exp2.png', altText: 'Jai Ganesh Catering Services — Jai Ganesh Catering' },
-  { id: 's3', url: '/images/experience/exp3.png', altText: 'Catering Setup — Jai Ganesh Catering' },
-  { id: 's4', url: '/images/experience/exp4.jpg', altText: 'Event Guest — Jai Ganesh Catering' },
-  { id: 's5', url: '/images/experience/exp5.png', altText: 'Happy Marriage Life — Jai Ganesh Catering' },
+  {
+    id: 'exp-1',
+    url: '/images/celebrations/celebration-13.jpg',
+    fallbackUrl: '/images/celebrations/IMG-20261002-WA0019.jpg',
+    altText: 'Night Outdoor Shamiana Catering Service — Jai Ganesh Catering',
+    objectPosition: 'center 20%'
+  },
+  {
+    id: 'exp-2',
+    url: '/images/celebrations/celebration-09.jpg',
+    fallbackUrl: '/images/celebrations/IMG-20261002-WA0020.jpg',
+    altText: 'With Political Leader Seeman — Jai Ganesh Catering',
+    objectPosition: 'center 15%'
+  },
+  {
+    id: 'exp-3',
+    url: '/images/celebrations/celebration-16.jpg',
+    fallbackUrl: '/images/celebrations/IMG-20260904-WA0024.jpg',
+    altText: 'Modern Banquet Hall Guest Hospitality — Jai Ganesh Catering',
+    objectPosition: 'center 25%'
+  },
+  {
+    id: 'exp-4',
+    url: '/images/celebrations/celebration-17.jpg',
+    fallbackUrl: '/images/celebrations/IMG-20260904-WA0021.jpg',
+    altText: 'Festive Mandapam Service Moments — Jai Ganesh Catering',
+    objectPosition: 'center 15%'
+  },
+  {
+    id: 'exp-5',
+    url: '/images/celebrations/celebration-15.jpg',
+    fallbackUrl: '/images/celebrations/IMG-20260904-WA0019.jpg',
+    altText: 'Warm Client Smile & Lasting Relations — Jai Ganesh Catering',
+    objectPosition: 'center 20%'
+  },
 ];
 
 export default function ExperienceGallery() {
@@ -52,7 +82,17 @@ export default function ExperienceGallery() {
             onClick={() => setSelectedPhoto(photo)}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={photo.url} alt={photo.altText || "Jai Ganesh Event"} loading="lazy" />
+            <img 
+              src={photo.url} 
+              alt={photo.altText || "Jai Ganesh Event"} 
+              loading="lazy" 
+              style={{ objectPosition: photo.objectPosition || 'center 20%' }}
+              onError={(e) => {
+                if (photo.fallbackUrl && e.currentTarget.src !== photo.fallbackUrl) {
+                  e.currentTarget.src = photo.fallbackUrl;
+                }
+              }}
+            />
             <div className="gallery-hover-label">
               <span>{photo.altText?.split('—')[0]?.trim() || 'Jai Ganesh Event'}</span>
             </div>
@@ -63,7 +103,17 @@ export default function ExperienceGallery() {
       {selectedPhoto && (
         <div className="lightbox" onClick={() => setSelectedPhoto(null)}>
           <button className="lightbox-close" onClick={() => setSelectedPhoto(null)}>✕</button>
-          <img src={selectedPhoto.url} alt={selectedPhoto.altText || "Jai Ganesh Event"} className="lightbox-img" onClick={(e) => e.stopPropagation()} />
+          <img 
+            src={selectedPhoto.url} 
+            alt={selectedPhoto.altText || "Jai Ganesh Event"} 
+            className="lightbox-img" 
+            onClick={(e) => e.stopPropagation()} 
+            onError={(e) => {
+              if (selectedPhoto.fallbackUrl && e.currentTarget.src !== selectedPhoto.fallbackUrl) {
+                e.currentTarget.src = selectedPhoto.fallbackUrl;
+              }
+            }}
+          />
         </div>
       )}
 
